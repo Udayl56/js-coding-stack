@@ -1,0 +1,566 @@
+{
+    "problems": [
+        {
+            "id": "1",
+            "title": "Multiples of 3 or 5",
+            "question": "If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23. Finish the solution so that it returns the sum of all the multiples of 3 or 5 below the number passed in.",
+            "starterCode": "const solution = number => { \n // Your solution \n};\n\n\n\n\n// you can change your input value in the input array\nconst input = [0,-15,200,20];\ninput.map((value)=>{\nconsole.log(solution(value));\n});",
+            "solution": "const solution = number => { \n  let sum = 0;\n  for (let i = 3; i < number; i++) {\n    if (i % 3 === 0 || i % 5 === 0) {\n      sum += i;\n    }\n  }\n  return sum;\n};",
+            "example": {
+                "input": [
+                    10
+                ],
+                "output": 23
+            },
+            "tests": [
+                {
+                    "input": [
+                        0
+                    ],
+                    "expectedOutput": 0
+                },
+                {
+                    "input": [
+                        -15
+                    ],
+                    "expectedOutput": 0
+                },
+                {
+                    "input": [
+                        200
+                    ],
+                    "expectedOutput": 9168
+                },
+                {
+                    "input": [
+                        20
+                    ],
+                    "expectedOutput": 78
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "title": "Clock",
+            "question": "The clock shows h hours (0 <= h <= 23), m minutes (0 <= m <= 59), and s seconds (0 <= s <= 59) after midnight. Your task is to write a function that returns the time since midnight in milliseconds. There are 1,000 milliseconds in a second.",
+            "starterCode": "const past = (h, m, s) => { \n // Your solution \n};\n\n\n\nconst input = [[0, 0, 0],[0,1,1],[1,0,0],[1,0,1],[1,1,1]];\ninput.map((value)=>{\nconsole.log(past( value[0], value[1], value[2]));\n}",
+            "solution": "const past = (h ,m ,s)=> { \n\n  return (h * 60 * 60 + m * 60 + s) * 1000;\n};",
+            "example": {
+                "input": [
+                    1,
+                    0,
+                    1
+                ],
+                "output": 3601000
+            },
+            "tests": [
+                {
+                    "input": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "expectedOutput": 0
+                },
+                {
+                    "input": [
+                        0,
+                        1,
+                        1
+                    ],
+                    "expectedOutput": 61000
+                },
+                {
+                    "input": [
+                        1,
+                        0,
+                        0
+                    ],
+                    "expectedOutput": 3600000
+                },
+                {
+                    "input": [
+                        1,
+                        0,
+                        1
+                    ],
+                    "expectedOutput": 3601000
+                },
+                {
+                    "input": [
+                        1,
+                        1,
+                        1
+                    ],
+                    "expectedOutput": 3661000
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "title": "Century From Year",
+            "question": "The first century spans from the year 1 up to and including the year 100. The second spans from the year 101 up to and including the year 200, and so on. Given a year, return the century it is in.",
+            "starterCode": "const century = year => { \n // Your solution \n};\n\n\nconst input=[1705,1900,2000,1601];\ninput.map((value)=>{\nconsole.log(century(value));\n});",
+            "solution": "const century = year => {\nreturn Math.ceil(year / 100);\n};",
+            "example": {
+                "input": [
+                    89
+                ],
+                "output": 1
+            },
+            "tests": [
+                {
+                    "input": [
+                        1705
+                    ],
+                    "expectedOutput": 18
+                },
+                {
+                    "input": [
+                        1900
+                    ],
+                    "expectedOutput": 19
+                },
+                {
+                    "input": [
+                        2000
+                    ],
+                    "expectedOutput": 20
+                },
+                {
+                    "input": [
+                        1601
+                    ],
+                    "expectedOutput": 17
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "title": "Keep Hydrated",
+            "question": "Nathan loves cycling. Because Nathan knows it is important to stay hydrated, he drinks 0.5 liters of water per hour of cycling. Given the time in hours, return the number of liters of water that Nathan will drink, rounded down to the nearest whole number.",
+            "starterCode": "const litres = time => { \n // Your solution \n};\n\n\n\nconst input=[0,2,0.82,11.8,1787];\ninput.map((value)=>{\nconsole.log(litres(value));\n});",
+            "solution": "const litres = time => { \n return Math.floor(time * 0.5); \n};",
+            "example": {
+                "input": [
+                    12.3
+                ],
+                "output": 6
+            },
+            "tests": [
+                {
+                    "input": [
+                        0
+                    ],
+                    "expectedOutput": 0
+                },
+                {
+                    "input": [
+                        2
+                    ],
+                    "expectedOutput": 1
+                },
+                {
+                    "input": [
+                        0.82
+                    ],
+                    "expectedOutput": 0
+                },
+                {
+                    "input": [
+                        11.8
+                    ],
+                    "expectedOutput": 5
+                },
+                {
+                    "input": [
+                        1787
+                    ],
+                    "expectedOutput": 893
+                }
+            ]
+        },
+        {
+            "id": "5",
+            "title": "Get the Middle Character",
+            "question": "Given a word, return the middle character(s) of the word. If the word's length is odd, return the middle character. If the word's length is even, return the middle two characters.",
+            "starterCode": "const getMiddle = str => { \n // Your solution \n};\n\n\n\nconst input=['test','testing','A'];\ninput.map((value)=>{\nconsole.log(getMiddle(value));\n});",
+            "solution": "const getMiddle = str => { \n  const len = str.length;\nconst mid = len / 2;\n// For an odd length, len % 2 equals 1 which is truthy\nreturn len % 2 ? str[Math.floor(mid)] : str[mid - 1] + str[mid]; \n};",
+            "example": {
+                "input": [
+                    "middle"
+                ],
+                "output": "dd"
+            },
+            "tests": [
+                {
+                    "input": [
+                        "test"
+                    ],
+                    "expectedOutput": "es"
+                },
+                {
+                    "input": [
+                        "testing"
+                    ],
+                    "expectedOutput": "t"
+                },
+                {
+                    "input": [
+                        "A"
+                    ],
+                    "expectedOutput": "A"
+                }
+            ]
+        },
+        {
+            "id": "6",
+            "title": "Create Phone Number",
+            "question": "Write a function that accepts an array of 10 integers (between 0 and 9) and returns a string of those numbers in the form of a phone number.",
+            "starterCode": "const createPhoneNumber = numbers => { \n // Your solution  \n};\n\n\n\nconst input=[[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],[1, 2, 3, 4, 5, 6, 7, 8, 9, 0]];\ninput.map((value)=>{\nconsole.log(createPhoneNumber(value));\n});",
+            "solution": "const createPhoneNumber = numbers => { \nconst str = numbers.join('');\nreturn `(${str.substring(0, 3)}) ${str.substring(3, 6)}-${str.substring(6)}`; \n};",
+            "example": {
+                "input": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    0
+                ],
+                "output": "(123) 456-7890"
+            },
+            "tests": [
+                {
+                    "input": [
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1
+                    ],
+                    "expectedOutput": "(111) 111-1111"
+                },
+                {
+                    "input": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        0
+                    ],
+                    "expectedOutput": "(123) 456-7890"
+                }
+            ]
+        },
+        {
+            "id": "7",
+            "title": "Square Every Digit",
+            "question": "Given an integer, your task is to square every digit of it and concatenate them to produce a new integer.",
+            "starterCode": "const squareDigits = num => { \n // Your solution \n};\n\n\n\nconst input=[3212,9159];\ninput.map((value)=>{\nconsole.log(squareDigits(value));\n});",
+            "solution": "const squareDigits = num => { \nreturn Number(\nnum\n.toString()\n.split('')\n.map(ele => ele * ele)\n.join('')\n);\n};",
+            "example": {
+                "input": [
+                    2112
+                ],
+                "output": 34114
+            },
+            "tests": [
+                {
+                    "input": [
+                        3212
+                    ],
+                    "expectedOutput": 9414
+                },
+                {
+                    "input": [
+                        9159
+                    ],
+                    "expectedOutput": 8112581
+                }
+            ]
+        },
+        {
+            "id": "8",
+            "title": "Mumbling",
+            "question": "Given a string of letters, write a function that outputs the following: A-Bb-Ccc-Dddd for input 'abcd'.",
+            "starterCode": "const accum = str => { \n // Your solution \n};\n\n\n\nconst input=['abcd','RqaEzty'];\ninput.map((value)=>{\nconsole.log(accum(value));\n});",
+            "solution": "const accum = str => { \n // return str\n.split('')\n.map((ele, index) => ele.toUpperCase() + ele.toLowerCase().repeat(index))\n.join('-'); \n};",
+            "example": {
+                "input": [
+                    "abcd"
+                ],
+                "output": "A-Bb-Ccc-Dddd"
+            },
+            "tests": [
+                {
+                    "input": [
+                        "abcd"
+                    ],
+                    "expectedOutput": "A-Bb-Ccc-Dddd"
+                },
+                {
+                    "input": [
+                        "RqaEzty"
+                    ],
+                    "expectedOutput": "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+                }
+            ]
+        },
+        {
+            "id": "9",
+            "title": "Bit Counting",
+            "question": "Write a function that takes an integer as input and returns the number of bits that are equal to 1 in the binary representation of that number. The input is non-negative. For example, the binary representation of 1234 is 10011010010, so the function should return 5 in this case.",
+            "starterCode": "const countBits = n => { \n // Your solution \n};\n\n\n\nconst input=[0,4,9];\ninput.map((value)=>{\nconsole.log(countBits(value));\n});",
+            "solution": "const countBits = n => { \n  return n.toString(2).split('0').join('').length; \n};",
+            "example": {
+                "input": [
+                    4
+                ],
+                "output": 1
+            },
+            "tests": [
+                {
+                    "input": [
+                        0
+                    ],
+                    "expectedOutput": 0
+                },
+                {
+                    "input": [
+                        4
+                    ],
+                    "expectedOutput": 1
+                },
+                {
+                    "input": [
+                        9
+                    ],
+                    "expectedOutput": 2
+                }
+            ]
+        },
+        {
+            "id": "10",
+            "title": "Find The Parity Outlier",
+            "question": "You are given an array of integers of at least length 3. The array is either entirely comprised of odd integers or entirely comprised of even integers except for a single integer N. Write a function that takes the array as an argument and returns the outlier N.",
+            "starterCode": "const findOutlier = arr => { \n // Your solution \n};\n\n\n\nconst input=[[1,2,3],[1,1,0,1,1]];\ninput.map((value)=>{\nconsole.log( findOutlier(value));\n});",
+            "solution": "const findOutlier = arr => { \n  const evenArray = arr.filter(ele => ele % 2 === 0);\n const oddArray = arr.filter(ele => ele % 2 !== 0);\nreturn evenArray.length === 1 ? evenArray[0] : oddArray[0]; \n};",
+            "example": {
+                "input": [
+                    0,
+                    1,
+                    2
+                ],
+                "output": 1
+            },
+            "tests": [
+                {
+                    "input": [
+                        "1 ",
+                        "2 ",
+                        "3 "
+                    ],
+                    "expectedOutput": 2
+                },
+                {
+                    "input": [
+                        "1 ",
+                        "1 ",
+                        "0 ",
+                        "1 ",
+                        "1 "
+                    ],
+                    "expectedOutput": 0
+                }
+            ]
+        },
+        {
+            "id": "11",
+            "title": "Extract the Domain Name From a URL",
+            "question": "Write a function that given an input URL, returns its domain name.",
+            "starterCode": "const domainName = url => { \n // Your solution \n};\n\n\n\nconst input=['http://google.com','http: //google.co.jp','https://www.facebook.com'];\ninput.map((value)=>{\nconsole.log( domainName(value));\n});",
+            "solution": "const domainName = url => { \nreturn url.replace('http://', '').replace('https://', '').replace('www.', '').split('.')[0];\n};",
+            "example": {
+                "input": [
+                    "www.google.com"
+                ],
+                "output": "google"
+            },
+            "tests": [
+                {
+                    "input": [
+                        "http://google.com"
+                    ],
+                    "expectedOutput": "google"
+                },
+                {
+                    "input": [
+                        " http: //google.co.jp"
+                    ],
+                    "expectedOutput": "google"
+                },
+                {
+                    "input": [
+                        " https://www.facebook.com"
+                    ],
+                    "expectedOutput": "facebook"
+                }
+            ]
+        },
+        {
+            "id": "12",
+            "title": "Persistent Bugger",
+            "question": " Write a function that takes a positive number num and returns its multiplicative persistence, which is the number of steps it takes to multiply all the digits of num by each other, and repeating with the product until a single digit is obtained.",
+            "starterCode": "const persistence = num => { \n  // Your solution \n \n};\n\n\n\nconst input=[999,93,5];\ninput.map((value)=>{\nconsole.log( persistence(value));\n});",
+            "solution": "const persistence = num => { \n  if (num < 10) return 0;\n\n let product = 1;\n while (num >= 10) {\nproduct *= num % 10;\nnum = Math.floor(num / 10);\n}\nreturn 1 + persistence(product * num);\n};",
+            "example": {
+                "input": [
+                    93
+                ],
+                "output": "9*3=27, 2*7=14, 1*4=4 and 4 has only one digit - 3 step"
+            },
+            "tests": [
+                {
+                    "input": [
+                        93
+                    ],
+                    "expectedOutput": 3
+                },
+                {
+                    "input": [
+                        999
+                    ],
+                    "expectedOutput": 4
+                },
+                {
+                    "input": [
+                        5
+                    ],
+                    "expectedOutput": 0
+                }
+            ]
+        },
+        {
+            "id": "13",
+            "title": "Reverse Integer",
+            "question": "Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.",
+            "starterCode": "const reverse = x => { \n // Your solution \n};\n\n\n\nconst input=[0,-123,120,1534236469];\ninput.map((value)=>{\nconsole.log( reverse(value));\n});",
+            "solution": "const reverse = x => { \n const MAX = Math.pow(2, 31) - 1;\nconst MIN = -1 * Math.pow(2, 31);\n  const arr = Math.abs(x).toString().split('');\nconst reversed = Math.sign(x) * Number(arr.reverse().join(''));\n  return reversed < MIN || reversed > MAX ? 0 : reversed; \n};",
+            "example": {
+                "input": [
+                    0
+                ],
+                "output": 0
+            },
+            "tests": [
+                {
+                    "input": [
+                        0
+                    ],
+                    "expectedOutput": 0
+                },
+                {
+                    "input": [
+                        -123
+                    ],
+                    "expectedOutput": -321
+                },
+                {
+                    "input": [
+                        120
+                    ],
+                    "expectedOutput": 21
+                },
+                {
+                    "input": [
+                        1534236469
+                    ],
+                    "expectedOutput": 0
+                }
+            ]
+        },
+        {
+            "id": "14",
+            "title": "Returning Strings",
+            "question": "Write a function that given the input string name, returns the greeting statement Hello, <name> how are you doing today?.",
+            "starterCode": "const greet = name => { \n // Your solution \n};\n\n\nconst input=['Sara','Ali']\ninput.map((value)=>{\nconsole.log(greet(value));\n});",
+            "solution": "const greet = name => { \n  return `Hello, ${name} how are you doing today?`; \n};",
+            "example": {
+                "input": [
+                    "Ryan"
+                ],
+                "output": "Hello, Ryan how are you doing today?"
+            },
+            "tests": [
+                {
+                    "input": [
+                        "Sara"
+                    ],
+                    "expectedOutput": "Hello, Sara how are you doing today?"
+                },
+                {
+                    "input": [
+                        "Ali"
+                    ],
+                    "expectedOutput": "Hello, Ali how are you doing today?"
+                }
+            ]
+        },
+        {
+            "id": "15",
+            "title": "Is n Divisible by x and y?",
+            "question": "Create a function that checks if a number n is divisible by two numbers x AND y. All inputs are positive, non-zero digits.",
+            "starterCode": "const isDivisible = (n, x, y) => {\n// Your solution\n};\n\n\n\nconst input=[[3, 3, 4],[8, 3, 4],[48, 3, 4]]\ninput.map((value)=>{\nconsole.log( isDivisible(value[0],value[1],value[2]));\n});",
+            "solution": "const isDivisible = (n, x, y) => {\nreturn n % x === 0 && n % y === 0; \n};",
+            "example": {
+                "input": [
+                    0,
+                    1,
+                    2
+                ],
+                "output": 1
+            },
+            "tests": [
+                {
+                    "input": [
+                        "3 ",
+                        "3 ",
+                        "4 "
+                    ],
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": [
+                        "8 ",
+                        "4 ",
+                        "3 "
+                    ],
+                    "expectedOutput": "false"
+                },
+                {
+                    "input": [
+                        "48 ",
+                        "3 ",
+                        "4 "
+                    ],
+                    "expectedOutput": "true"
+                }
+            ]
+        }
+    ]
+}
